@@ -1,0 +1,407 @@
+/**
+* 
+*  The MIT License (MIT)
+* 
+*  Copyright (c) 2015 Rob Campbell
+* 
+*  Permission is hereby granted, free of charge, to any person obtaining a copy
+*  of this software and associated documentation files (the "Software"), to deal
+*  in the Software without restriction, including without limitation the rights
+*  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+*  copies of the Software, and to permit persons to whom the Software is
+*  furnished to do so, subject to the following conditions:
+* 
+*  The above copyright notice and this permission notice shall be included in all
+*  copies or substantial portions of the Software.
+* 
+*  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+*  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+*  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+*  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+*  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+*  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+*  SOFTWARE.
+*
+*/
+
+/**
+ *
+ * CSS reset
+ *
+ */
+html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn, em, img, ins, kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary,time, mark, audio, video {
+    margin : 0;
+    padding : 0;
+    border : 0;
+    font-size : 1em;
+    font-family : inherit;
+    font-weight : normal;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display: block;
+}
+
+ol,ul {
+    list-style : none;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased !important;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.0);
+
+    -webkit-text-size-adjust: none;
+       -moz-text-size-adjust: none;
+         -o-text-size-adjust: none;
+            text-size-adjust: none;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+         -o-user-select: none;
+            user-select: none;
+
+    -webkit-user-drag: none;
+       -moz-user-drag: none;
+       -moz-user-drag: -moz-none;
+         -o-user-drag: none;
+            user-drag: none;
+}
+
+/**
+ *
+ * Fonts
+ *
+ */
+@font-face {
+    font-family: 'LatoMedium';
+    src: url('../fonts/Lato/Lato-Medium.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Lato/Lato-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Lato/Lato-Medium.woff') format('woff'),
+         url('../fonts/Lato/Lato-Medium.ttf') format('truetype'); 
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'LatoLight';
+    src: url('../fonts/Lato/Lato-Light.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Lato/Lato-Light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Lato/Lato-Light.woff') format('woff'),
+         url('../fonts/Lato/Lato-Light.ttf') format('truetype'); 
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'LatoThin';
+    src: url('../fonts/Lato/Lato-Thin.eot');
+    src: url('../fonts/Lato/Lato-Thin.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Lato/Lato-Thin.woff') format('woff'),
+         url('../fonts/Lato/Lato-Thin.ttf') format('truetype'); 
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'LatoHairline';
+    src: url('../fonts/Lato/Lato-Hairline.eot');
+    src: url('../fonts/Lato/Lato-Hairline.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Lato/Lato-Hairline.woff') format('woff'),
+         url('../fonts/Lato/Lato-Hairline.ttf') format('truetype'); 
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/**
+ *
+ * Main styles
+ *
+ */
+.wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: hsl(160, 80%, 30%);
+    background: #FFF;
+}
+
+.tray {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+
+    background: hsl(178, 90%, 20%);
+
+    background: -webkit-linear-gradient(-135deg, hsl(150, 90%, 20%) 0%, hsl(178, 90%, 20%) 50%, hsl(150, 90%, 20%) 100%);
+    background:    -moz-linear-gradient(-135deg, hsl(150, 90%, 20%) 0%, hsl(178, 90%, 20%) 50%, hsl(150, 90%, 20%) 100%);
+    background:         linear-gradient(-135deg, hsl(150, 90%, 20%) 0%, hsl(178, 90%, 20%) 50%, hsl(150, 90%, 20%) 100%);
+
+    -webkit-transition: -webkit-transform .400s ease 0s, opacity .400s ease 0s;
+            transition:         transform .400s ease 0s, opacity .400s ease 0s;
+
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+    overflow: hidden;
+    opacity: 1;
+}
+
+.tray--active {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.tray__inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    -webkit-transition: -webkit-transform .400s ease 0s, opacity;
+            transition:         transform .400s ease 0s, opacity;
+
+    -webkit-transform: translate3d(0, 100%, 0)  scale(.8);
+            transform: translate3d(0, 100%, 0)  scale(.8);
+}
+
+.tray__inner--active {
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+            transform: translate3d(0, 0, 0) scale(1);
+}
+
+.tray__inner__pane {
+    position: relative;
+    display: block;
+    margin: auto;
+    top: 45%;
+    width: 100%;
+    height: auto;
+    -webkit-transform: translateY(-45%);
+            transform: translateY(-45%);
+
+    -webkit-transition: opacity 1s ease 0s;
+            transition: opacity 1s ease 0s;
+    opacity: 0;
+}
+
+.tray__inner__pane--active {
+    opacity: 1;
+}
+
+.tray__inner__pane li {
+    margin-top: 2em;
+    font: 400 .9rem/1rem "LatoLight", "Helvetica Neue", Helvetica, sans-serif !important;
+    text-align: center;
+    text-transform: none;
+    color: hsla(0, 0%, 100%, 1);
+
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+}
+
+.tray__inner__pane li:nth-of-type(1) {
+    margin-top: 0em;
+}
+
+.tray__inner__pane li span {
+    font: 100 1.15rem/1.5rem "LatoThin", "Helvetica Neue", Helvetica, sans-serif;
+    letter-spacing: 0.02em;
+    color: hsla(0, 0%, 100%, 1);
+    text-transform: uppercase;
+}
+
+.tray__inner__pane li img {
+    position: relative;
+    margin: auto;
+    display: block;
+    height: 42px;
+    padding-bottom: 2px;
+    opacity: 0.85;
+}
+
+.play-bttn {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    right: 1%;
+    bottom: 1%;
+    background: hsla(300, 20%, 15%, .2);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/**
+ *
+ * CSS rubberBand animation from Animate.css.
+ * https://github.com/daneden/animate.css
+ *
+ */
+@-webkit-keyframes rubberBand {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+    }
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+                transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        -webkit-transform: scale3d(0.75, 0.95, 1);
+                transform: scale3d(0.75, 0.95, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+               transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        -webkit-transform: scale3d(.95, 0.85, 1);
+                transform: scale3d(.95, 0.85, 1);
+    }
+    75% {
+        -webkit-transform: scale3d(1.05, .95, 1);
+                transform: scale3d(1.05, .95, 1);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes rubberBand {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+    }
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+                transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+                transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+                transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        -webkit-transform: scale3d(.95, 1.05, 1);
+                transform: scale3d(.95, 1.05, 1);
+    }
+    75% {
+        -webkit-transform: scale3d(1.05, .95, 1);
+                transform: scale3d(1.05, .95, 1);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+    }
+}
+
+.rubberBand {
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+
+  -webkit-animation-name: rubberBand;
+          animation-name: rubberBand;
+}
+
+
+/**
+ *
+ * Media Queries
+ *
+ */
+@media all and (orientation: landscape) {
+
+    html {
+        font-size: 1.1em;
+    }
+
+    .tray__inner__pane {
+        -webkit-column-count: 2;
+           -moz-column-count: 2;
+                column-count: 2;
+    }    
+}
+
+@media all and (min-width: 568px) {
+
+    .tray__inner {
+        padding: 0 10%;
+    }
+
+}
+
+@media all and (min-width: 736px) {
+
+    .tray__inner {
+        padding: 0 10%;
+    }
+
+}
+
+@media all and (min-width: 768px) {
+
+    .tray__inner {
+        padding: 0 20%;
+    }
+
+}
+
+
+@media all and (max-width: 480px) and (min-width: 320px) {
+    .tray__inner__pane {
+        width: 74%;
+    }
+
+    .tray__inner__pane li {
+        margin-top: 3em;
+        text-align: left;
+    }
+
+    .tray__inner__pane li img {
+        height: 32px;
+        margin: 8px 15px 0 0;
+        float: left;
+    }
+}
+
+@media all and (max-width: 480px) and (min-width: 320px) and (orientation: landscape) {
+
+    .tray__inner__pane {
+        width: 90%;
+        padding-top: 35px;
+    }
+
+    .tray__inner__pane li img {
+        margin: 10px 10px 14px 0;
+        float: left;
+    }
+
+    .tray__inner__pane li:nth-of-type(3) img {
+        margin: 6px 10px 14px 0;
+    }
+
+    .tray__inner__pane li span {
+        font: 100 1rem/1.2rem "LatoThin", "Helvetica Neue", Helvetica, sans-serif;
+        letter-spacing: 0.02em;
+        color: hsla(0, 0%, 100%, 1);
+        text-transform: uppercase;
+    }
+
+}
+
