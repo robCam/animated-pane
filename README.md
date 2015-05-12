@@ -14,7 +14,7 @@ You'll need to:
 
 ## Example
 
-* [demo](http://robcam.github.io/demos/01_top-to-bottom/)
+* [demo](http://robcam.github.io/demos/05_animated-pane/)
 
 ## License (MIT)
 
