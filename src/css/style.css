@@ -221,13 +221,23 @@ ol,ul {
     text-transform: uppercase;
 }
 
-.tray__inner__pane li img {
+.tray__inner__pane li svg {
     position: relative;
     margin: auto;
     display: block;
     height: 42px;
     padding-bottom: 2px;
     opacity: 0.85;
+}
+
+.tray__inner__pane li:hover svg path {
+    fill: hsl(188, 100%, 60%);
+}
+
+.tray__inner__pane li:hover,
+.tray__inner__pane li:hover span {
+    color: hsl(188, 100%, 60%);
+    cursor: pointer;
 }
 
 .play-bttn {
