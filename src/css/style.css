@@ -384,7 +384,7 @@ ol,ul {
         text-align: left;
     }
 
-    .tray__inner__pane li img {
+    .tray__inner__pane li svg {
         height: 32px;
         margin: 8px 15px 0 0;
         float: left;
@@ -398,7 +398,7 @@ ol,ul {
         padding-top: 35px;
     }
 
-    .tray__inner__pane li img {
+    .tray__inner__pane li svg {
         margin: 10px 10px 14px 0;
         float: left;
     }
