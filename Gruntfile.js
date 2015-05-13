@@ -219,8 +219,7 @@ module.exports = function (grunt) {
         'replace',
         'usebanner:js',
         'usebanner:css',
-        'appcache',
-        'svgmin'
+        'appcache'
     ]);
 
 };
