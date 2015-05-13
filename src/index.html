@@ -141,13 +141,13 @@
             trayIsActive = trayIsActive ? false : true;
         }
     
-        //button.addEventListener(param.pointerEnd, toggleTray, false);
+        button.addEventListener(param.pointerEnd, toggleTray, false);
     
         trayInner.addEventListener(param.transitionEnd, applyRubberBandEffect, false);
     
         document.addEventListener('touchmove', function(e) { e.preventDefault(); }, true);
     
-        toggleTray();
+        //toggleTray();
     }(this.document, this.RCAM));
 
     </script>
